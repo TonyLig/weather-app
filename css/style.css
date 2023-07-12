@@ -98,9 +98,10 @@ body {
   background-color: #b05102;
 }
 
-.top .erroe {
+.top .error {
   color: white;
   font-size: 14px;
+  z-index: 999;
 }
 
 .icon {
