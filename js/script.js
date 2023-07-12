@@ -43,12 +43,18 @@ function displayData(response) {
     const weather = document.querySelector(".weather");
     weather.innerText = `Weather ${response.weather[0].main}`;
 
-    const tempRange = document.querySelector(".temp-range");
+    const tempRange = document.querySelector(".temp-rang");
     tempRange.innerText = `Temp Range: ${Math.round(
       response.main.temp_min
     )}°C / ${Math.round(response.main.temp_max)}°C`;
-  }
 
+    const weatherIcon = document.querySelector(".weather-icon");
+    const iconURL = "http://openweathermap.org/img/w/";
+    weatherIcon.src = iconURL + response.weather[0].icon + ".png";
+
+    search.value = "";
+  }
+}
 
 function dateFunction(d) {
   let months = [
@@ -81,4 +87,4 @@ function dateFunction(d) {
   let year = d.getFullYear();
 
   return `${day}, ${date} ${month} ${year}`;
-};
+}
